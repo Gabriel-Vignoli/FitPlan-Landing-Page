@@ -1,3 +1,5 @@
+import Button from "./Button";
+
 const Header = () => {
   return (
     <div className="pointer-events-none fixed left-0 top-0 z-50 flex w-full items-center justify-between border-white/10 bg-black/25 px-16 py-4">
@@ -15,12 +17,7 @@ const Header = () => {
         <a href="#" className="cursor-pointer transition-colors duration-200 hover:text-white">FAQ</a>
       </nav>
 
-      <button
-        className="pointer-events-auto rounded-full bg-primary px-7 py-3 text-[16px] font-jakarta text-white transition hover:brightness-110"
-        aria-label="Adquirir Plano"
-      >
-        Adquirir Plano
-      </button>
+      <Button></Button>
     </div>
   );
 };
