@@ -23,7 +23,7 @@ const Card = ({ image, title, description, size = "medium" }) => {
   
           {/* Text Content */}
           <h3 className="text-2xl font-bold mt-2">{title}</h3>
-          <p className="text-white/70 text-base">{description}</p>
+          <p className="text-white/70 text-description">{description}</p>
         </div>
       </div>
     );

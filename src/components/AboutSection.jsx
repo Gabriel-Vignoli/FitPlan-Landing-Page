@@ -11,7 +11,7 @@ const AboutSection = () => {
         </div>
 
         {/* Title */}
-        <h1 className="font-changa text-heading uppercase text-white">
+        <h1 className="font-changa text-heading uppercase">
           Sua Evolução <br />
           Começa Aqui
         </h1>

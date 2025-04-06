@@ -3,6 +3,7 @@ const Button = ({
   ariaLabel = "Adquirir Plano",
   onClick,
   variant = "primary", // 'primary' ou 'secondary'
+  className = "",   
 }) => {
   const baseStyles =
     "rounded-full border px-7 py-4 text-button font-jakarta font-bold text-white transition hover:brightness-110";
@@ -15,7 +16,7 @@ const Button = ({
 
   return (
     <button
-      className={`${baseStyles} ${variantStyles[variant]}`}
+      className={`${baseStyles} ${variantStyles[variant]} ${className}`} // 👈 aplicado aqui
       aria-label={ariaLabel}
       onClick={onClick}
     >

@@ -19,6 +19,7 @@ export default {
       fontSize: {
         heading: ['72px', { lineHeight: '1' }],
         description: ['20px', { lineHeight: '1.6' }],
+        card: ['28px', { lineHeight: '1.6' }],
         button: ['16px', { lineHeight: '1.4' }],
         link: ['16px', { lineHeight: '1.4' }],
         hat: ['14px', { lineHeight: '1.3', letterSpacing: '0.05em' }],
