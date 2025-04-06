@@ -17,7 +17,7 @@ export default {
         changa: ['"Changa One"', ...defaultTheme.fontFamily.sans],
       },
       fontSize: {
-        heading: ['72px', { lineHeight: '1.1' }],
+        heading: ['72px', { lineHeight: '1' }],
         description: ['20px', { lineHeight: '1.6' }],
         button: ['16px', { lineHeight: '1.4' }],
         link: ['16px', { lineHeight: '1.4' }],
