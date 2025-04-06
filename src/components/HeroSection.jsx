@@ -4,17 +4,15 @@ import Button from "./Button";
 const HeroSection = () => {
   return (
     <section className="relative flex h-screen w-full flex-col items-start gap-7 bg-[linear-gradient(to_right,rgba(0,0,0,0.85),rgba(0,0,0,0.4),rgba(0,0,0,0)),linear-gradient(to_top,rgba(0,0,0,0.85),rgba(0,0,0,0.4),rgba(0,0,0,0)),url('/hero-section-img.png')] bg-cover bg-center bg-no-repeat px-16 pt-[170px]">
-
-
       {/* Hat */}
       <div className="flex items-center gap-2 rounded-full border border-primary/20 bg-primary/10 px-4 py-3 backdrop-blur">
-        <span className="text-hat font-medium text-white">
+        <span className="text-hat font-medium">
           Seu novo começo Começa Aqui
         </span>
       </div>
 
       {/* Title */}
-      <h1 className="font-changa text-heading uppercase text-white">
+      <h1 className="font-changa text-heading uppercase">
         O Primeiro Passo <br />
         Para o Extraordinário <br />
         Começa NA <span className="text-primary">vortexfit</span>
