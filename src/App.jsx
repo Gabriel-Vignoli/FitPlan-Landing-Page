@@ -2,6 +2,7 @@ import AboutSection from "./components/AboutSection";
 import Header from "./components/Header";
 import HeroSection from "./components/HeroSection";
 import MethodologySection from "./components/MethodologySection";
+import SystemSection from "./components/SystemSection";
 import WhoIsItForSection from "./components/WhoIsItForSection";
 
 function App() {
@@ -12,6 +13,7 @@ function App() {
      <WhoIsItForSection></WhoIsItForSection>
      <AboutSection></AboutSection>
      <MethodologySection></MethodologySection>
+     <SystemSection></SystemSection>
     </>
   );
 }
