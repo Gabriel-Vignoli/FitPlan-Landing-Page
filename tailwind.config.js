@@ -9,7 +9,7 @@ export default {
   theme: {
     extend: {
       colors: {
-        primary: '#2C4FFB',
+        primary: '#F5BD04',
       },
       fontFamily: {
         sans: ['"Plus Jakarta Sans"', ...defaultTheme.fontFamily.sans],
@@ -25,7 +25,7 @@ export default {
         hat: ['14px', { lineHeight: '1.3', letterSpacing: '0.05em' }],
       },
       boxShadow: {
-        button: "0px 4px 24px 0px rgba(44, 79, 251, 0.2), inset 0px 4px 24px 0px rgba(255, 255, 255, 0.5)",
+        button: "0px 4px 24px 0px rgba(245, 189, 4, 0.2), inset 0px 4px 24px 0px rgba(255, 255, 255, 0.5)",
       },
     },
   },

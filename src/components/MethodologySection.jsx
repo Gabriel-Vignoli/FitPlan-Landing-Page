@@ -3,10 +3,10 @@ import MethodologyCard from "./MethodologyCard ";
 
 const MethodologySection = () => {
   return (
-    <section className="flex flex-col gap-16 bg-primary/50 p-16">
+    <section className="flex flex-col gap-16 bg-primary/70 p-16">
       <div>
         {/* Hat */}
-        <div className="flex w-fit items-center gap-2 rounded-full border border-primary/20 bg-black/50 px-4 py-3 backdrop-blur">
+        <div className="flex w-fit items-center gap-2 rounded-full border border-primary/20 bg-black/90 px-4 py-3 backdrop-blur">
           <span className="text-hat font-medium">Mais que uma academia</span>
         </div>
 
