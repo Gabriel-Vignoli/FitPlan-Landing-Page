@@ -16,7 +16,7 @@ const Button = ({
 
   return (
     <button
-      className={`${baseStyles} ${variantStyles[variant]} ${className}`} // 👈 aplicado aqui
+      className={`${baseStyles} ${variantStyles[variant]} ${className}`} 
       aria-label={ariaLabel}
       onClick={onClick}
     >
