@@ -16,7 +16,7 @@ const Card = ({ image, title, description, size = "medium" }) => {
         />
         <div className="flex-1 h-full bg-white/5 backdrop-blur p-6 flex flex-col gap-2">
           {/* Icon Container */}
-          <div className="w-[50px] h-[50px] flex items-center justify-center rounded-full border border-[#2c4efb33] bg-[#2c4efb1a] backdrop-blur">
+          <div className="w-[50px] h-[50px] flex items-center justify-center rounded-full border border-primary/30 bg-primary/20 backdrop-blur">
             {/* Icon */}
             <img src="" alt="" />
           </div>
