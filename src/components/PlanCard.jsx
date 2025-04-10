@@ -4,7 +4,7 @@ import { Check } from "lucide-react";
 const PlanCard = ({ title, price, benefits, isSelected = false }) => {
   return (
     <div
-      className={`relative flex flex-col justify-between overflow-hidden rounded-[50px] px-8 py-16 shadow-lg transition-all duration-500 ${
+      className={`relative flex flex-col justify-between overflow-hidden rounded-[50px] px-8 py-16 transition-all duration-500 ${
         isSelected
           ? "z-10 h-[598px] w-[453px] scale-100"
           : "z-0 h-[500px] w-[380px] scale-95 opacity-80"
@@ -13,6 +13,9 @@ const PlanCard = ({ title, price, benefits, isSelected = false }) => {
         background: "black",
         position: "relative",
         isolation: "isolate",
+        boxShadow: isSelected
+          ? "0 12px 24px rgba(245, 189, 4, 0.2), 0 4px 10px rgba(0, 0, 0, 0.2)"
+          : "0 8px 16px rgba(255, 255, 255, 0.08), 0 2px 6px rgba(0, 0, 0, 0.15)",
       }}
     >
       {/* Gradient Effects */}
@@ -35,9 +38,7 @@ const PlanCard = ({ title, price, benefits, isSelected = false }) => {
 
       {/* Content */}
       <div className={`relative z-10 flex h-full flex-col ${isSelected ? "gap-12" : "gap-5"}`}>
-        <div
-          className={`flex flex-col text-center ${isSelected ? "gap-12" : "gap-5"}`}
-        >
+        <div className={`flex flex-col text-center ${isSelected ? "gap-12" : "gap-5"}`}>
           {/* Title */}
           <h3
             className={`font-bold ${
