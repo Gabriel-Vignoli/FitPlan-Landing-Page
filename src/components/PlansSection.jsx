@@ -3,7 +3,7 @@ import { Wallet } from "lucide-react"
 
 const PlansSection = () => {
   return (
-    <section className="flex flex-col items-center justify-center gap-16 border-b-2 border-b-white/10 p-16">
+    <section className="flex flex-col items-center justify-center gap-16 border-b-2 border-b-white/10 p-16" id="planos">
       <div className="flex flex-col items-center gap-16">
       <div className="flex flex-col items-center gap-6">
         {/* Hat */}

@@ -3,7 +3,7 @@ import { Flame, ArrowDown } from "lucide-react";
 
 const AboutSection = () => {
   return (
-    <section className="mt-12 flex w-full">
+    <section className="mt-12 flex w-full" id="sobre">
       {/* Left */}
       <div className="flex w-1/2 flex-col gap-6 p-16">
         {/* Hat */}

@@ -4,9 +4,10 @@ const Button = ({
   children = "Adquirir Plano",
   ariaLabel = "Adquirir Plano",
   onClick,
-  variant = "primary", // 'primary' ou 'secondary'
+  variant = "primary",
   icon,
   className = "",
+  href, 
 }) => {
   const [isHovered, setIsHovered] = useState(false);
 
@@ -22,8 +23,11 @@ const Button = ({
     }`,
   };
 
+  const Component = href ? "a" : "button";
+
   return (
-    <button
+    <Component
+      href={href}
       className={`${baseStyles} ${variantStyles[variant]} ${className}`}
       aria-label={ariaLabel}
       onClick={onClick}
@@ -53,7 +57,7 @@ const Button = ({
           </span>
         )}
       </div>
-    </button>
+    </Component>
   );
 };
 

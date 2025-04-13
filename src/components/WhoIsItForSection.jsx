@@ -3,7 +3,7 @@ import { Trophy } from "lucide-react";
 
 const WhoIsItForSection = () => {
   return (
-    <section className="items-center p-16">
+    <section className="items-center p-16" id="para-quem-e">
       <div className="flex flex-col items-center gap-6">
         {/* Hat */}
         <div className="flex items-center gap-2 rounded-full border border-primary/20 bg-primary/10 px-4 py-3 backdrop-blur">

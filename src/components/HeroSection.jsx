@@ -29,10 +29,10 @@ const HeroSection = () => {
 
       {/* Buttons */}
       <div className="mt-6 flex gap-6">
-        <Button variant="primary" icon={<ArrowRight size={20} color="white" />}>
+        <Button variant="primary" href="#planos" icon={<ArrowRight size={20} color="white" />}>
           Junte-se ao nosso time
         </Button>
-        <Button variant="secondary" icon={<Info size={20} color="white" />}>
+        <Button variant="secondary" icon={<Info size={20} color="white" />}  href="#sobre">
           Saiba Mais
         </Button>
       </div>

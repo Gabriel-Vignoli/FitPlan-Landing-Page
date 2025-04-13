@@ -1,6 +1,6 @@
 const SystemSection = () => {
   return (
-    <section className="flex flex-col items-center justify-center gap-16 border-b-2 border-b-white/10 p-16">
+    <section className="flex flex-col items-center justify-center gap-16 border-b-2 border-b-white/10 p-16" id="app">
       {/* Title */}
       <h1 className="font-changa text-heading uppercase">Nosso Sistema</h1>
 

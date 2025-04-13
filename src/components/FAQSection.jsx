@@ -4,7 +4,7 @@ import { Eye, HelpCircle } from "lucide-react";
 
 const FAQSection = () => {
   return (
-    <section className="flex flex-col gap-16 p-16">
+    <section className="flex flex-col gap-16 p-16" id="faq">
       <div>
         {/* Hat */}
         <div className="flex w-fit items-center gap-2 rounded-full border border-primary/20 bg-black/90 px-4 py-3 backdrop-blur">
@@ -20,7 +20,7 @@ const FAQSection = () => {
 
           {/* Button */}
           <div className="gap-10 flex">
-            <Button variant="primary" className="min-w-[220px] px-6 py-3" icon={<Eye size={18}/>}>
+            <Button variant="primary" className="min-w-[220px] px-6 py-3" icon={<Eye size={18}/>}  href="#planos">
               Ver Planos
             </Button>
             <Button variant="secondary" className="min-w-[220px] px-6 py-3" icon={<img src="/wahtsapp-icon.svg" className="h-[18px] w-[18px]" />}>

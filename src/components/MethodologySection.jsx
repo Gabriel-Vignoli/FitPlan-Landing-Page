@@ -5,7 +5,7 @@ import { Zap, Gauge, Eye, BarChart3, ArrowDown } from "lucide-react";
 
 const MethodologySection = () => {
   return (
-    <section className="flex flex-col gap-16 bg-primary/70 p-16">
+    <section className="flex flex-col gap-16 bg-primary/70 p-16" id="metodologia">
       <div>
         {/* Hat */}
         <div className="flex w-fit items-center gap-2 rounded-full border border-primary/20 bg-black/90 px-4 py-3 backdrop-blur">
