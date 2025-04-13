@@ -1,10 +1,10 @@
 import React from "react";
+import { Zap } from "lucide-react";
 
 const FAQCard = ({
   number = "01",
   question,
   answer,
-  icon,
   isSelected,
   onClick,
 }) => {
@@ -17,14 +17,14 @@ const FAQCard = ({
       } cursor-pointer rounded-2xl border-2 border-white/10 p-8 transition-all hover:border-white/30`}
       onClick={onClick}
     >
-      {/* Number + Question + Answer */}
+      {/* Número + Pergunta + Resposta */}
       <div className={`flex flex-1 ${isSelected ? "items-start" : "items-center"} gap-6`}>
-        {/* Number Bubble */}
+        {/* Número */}
         <div className="flex h-16 min-w-16 shrink-0 items-center justify-center rounded-full bg-white/10 text-xl font-bold text-white transition-colors">
           {number}
         </div>
 
-        {/* Content */}
+        {/* Conteúdo */}
         <div className="flex flex-col gap-4">
           <h3 className="font-changa text-3xl uppercase tracking-wide text-white">
             {question}
@@ -37,18 +37,18 @@ const FAQCard = ({
         </div>
       </div>
 
-      {/* Icon Container */}
+      {/* Ícone */}
       <div
         className={`flex h-16 w-16 items-center justify-center rounded-full border ${
           isSelected
-            ? "border-primary/30 bg-primary/20"
-            : "border-white/15 bg-white/5"
-        } shrink-0 backdrop-blur-sm transition-colors`}
+            ? "border-primary/50 bg-primary/10"
+            : "border-gray-300 bg-transparent"
+        } shrink-0 transition-colors`}
       >
-        {icon ? (
-          <img src={icon} alt="FAQ Icon" className="h-6 w-6" />
+        {isSelected ? (
+          <Zap className="text-primary h-6 w-6" />
         ) : (
-          <span className={`text-xl ${isSelected ? "text-primary" : "text-white"}`}>{isSelected ? "-" : "+"}</span>
+          <Zap className="text-white/70 h-6 w-6" /> 
         )}
       </div>
     </div>

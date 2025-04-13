@@ -1,4 +1,5 @@
 import PlanList from "./PlanList";
+import { Wallet } from "lucide-react"
 
 const PlansSection = () => {
   return (
@@ -7,6 +8,7 @@ const PlansSection = () => {
       <div className="flex flex-col items-center gap-6">
         {/* Hat */}
         <div className="flex items-center gap-2 rounded-full border border-primary/20 bg-primary/10 px-4 py-3 backdrop-blur">
+          <Wallet className="h-4 w-4 text-primary" />
           <span className="text-hat font-medium">Seu Orçamento</span>
         </div>
 

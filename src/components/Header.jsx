@@ -3,9 +3,7 @@ import Button from "./Button";
 const Header = () => {
   return (
     <div className="pointer-events-none fixed left-0 top-0 z-50 flex w-full items-center justify-between border-white/10 bg-black/25 px-16 py-4">
-      <p className="font-changa pointer-events-auto text-3xl font-bold leading-none text-white">
-        VORTEX
-      </p>
+      <img src="/logo.svg" alt="" />
 
       <nav className="font-jakarta pointer-events-auto flex items-center justify-center gap-5 text-[16px] text-gray-300">
         <a

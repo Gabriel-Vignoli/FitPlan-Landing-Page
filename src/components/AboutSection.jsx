@@ -1,12 +1,14 @@
 import Button from "./Button";
+import { Flame } from "lucide-react";
 
 const AboutSection = () => {
   return (
     <section className="mt-12 flex w-full">
-      {/* Left side: Content */}
+      {/* Left */}
       <div className="flex w-1/2 flex-col gap-6 p-16">
         {/* Hat */}
         <div className="flex w-fit items-center gap-2 rounded-full border border-primary/20 bg-primary/10 px-4 py-3 backdrop-blur">
+          <Flame className="h-4 w-4 text-primary" />
           <span className="text-hat font-medium">Mais que uma academia</span>
         </div>
 
@@ -32,7 +34,7 @@ const AboutSection = () => {
         </div>
       </div>
 
-      {/* Right side: Image */}
+      {/* Right */}
       <div className="flex w-1/2 items-center justify-center">
         <img
           src="/hero-section-img.png"

@@ -1,5 +1,6 @@
 import Button from "./Button";
 import FAQList from "./FAQList";
+import { HelpCircle } from "lucide-react";
 
 const FAQSection = () => {
   return (
@@ -7,6 +8,7 @@ const FAQSection = () => {
       <div>
         {/* Hat */}
         <div className="flex w-fit items-center gap-2 rounded-full border border-primary/20 bg-black/90 px-4 py-3 backdrop-blur">
+          <HelpCircle className="h-4 w-4 text-primary" />
           <span className="text-hat font-medium">Tire Sua Duvida</span>
         </div>
 

@@ -4,11 +4,7 @@ const MethodologyCard = ({ icon, title, description }) => {
       {/* Icon Container */}
       <div className="flex h-[80px] w-[80px] items-center justify-center rounded-full border border-primary/40 bg-primary/10 shadow-[inset_0_4px_16px_rgba(245,189,4,0.7)] backdrop-blur">
         {/* Icon */}
-        <img
-          src={icon || "/icons/energy-icon.svg"}
-          alt={title}
-          className="h-6 w-6"
-        />
+        {icon}
       </div>
 
       {/* Text Content */}
