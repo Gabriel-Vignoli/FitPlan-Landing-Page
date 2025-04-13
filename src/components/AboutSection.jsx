@@ -1,5 +1,5 @@
 import Button from "./Button";
-import { Flame } from "lucide-react";
+import { Flame, ArrowDown } from "lucide-react";
 
 const AboutSection = () => {
   return (
@@ -29,8 +29,12 @@ const AboutSection = () => {
 
         {/* Buttons */}
         <div className="mt-6 flex gap-6">
-          <Button variant="primary">Adquirir Plano</Button>
-          <Button variant="secondary">Entrar em contato</Button>
+          <Button variant="primary" icon={<ArrowDown size={18} />}>
+            Adquirir Plano
+          </Button>
+          <Button variant="secondary" icon={<img src="/wahtsapp-icon.svg" className="w-[18px] h-[18px]" />}>
+            Entrar em contato
+          </Button>
         </div>
       </div>
 

@@ -1,6 +1,6 @@
 import React from "react";
 import Button from "./Button";
-import { Sparkles } from "lucide-react";
+import { Sparkles, Info, ArrowRight } from "lucide-react";
 
 const HeroSection = () => {
   return (
@@ -29,8 +29,12 @@ const HeroSection = () => {
 
       {/* Buttons */}
       <div className="mt-6 flex gap-6">
-        <Button variant="primary">Junte-se ao nosso time</Button>
-        <Button variant="secondary">Saiba Mais</Button>
+        <Button variant="primary" icon={<ArrowRight size={20} color="white" />}>
+          Junte-se ao nosso time
+        </Button>
+        <Button variant="secondary" icon={<Info size={20} color="white" />}>
+          Saiba Mais
+        </Button>
       </div>
     </section>
   );

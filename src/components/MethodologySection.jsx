@@ -1,7 +1,7 @@
 import Button from "./Button";
 import MethodologyCard from "./MethodologyCard ";
 import { Users } from "lucide-react";
-import { Zap, Gauge, Eye, BarChart3 } from "lucide-react";
+import { Zap, Gauge, Eye, BarChart3, ArrowDown } from "lucide-react";
 
 const MethodologySection = () => {
   return (
@@ -21,7 +21,7 @@ const MethodologySection = () => {
           </h1>
 
           {/* Button */}
-          <Button variant="primary" className="min-w-[220px] px-6 py-3">
+          <Button variant="primary" className="min-w-[220px] px-6 py-3" icon={<ArrowDown size={18} />}>
             Fazer Parte
           </Button>
         </div>

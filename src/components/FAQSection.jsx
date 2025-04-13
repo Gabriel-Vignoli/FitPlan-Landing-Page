@@ -1,6 +1,6 @@
 import Button from "./Button";
 import FAQList from "./FAQList";
-import { HelpCircle } from "lucide-react";
+import { Eye, HelpCircle } from "lucide-react";
 
 const FAQSection = () => {
   return (
@@ -20,10 +20,10 @@ const FAQSection = () => {
 
           {/* Button */}
           <div className="gap-10 flex">
-            <Button variant="primary" className="min-w-[220px] px-6 py-3">
-              Comprar Plano
+            <Button variant="primary" className="min-w-[220px] px-6 py-3" icon={<Eye size={18}/>}>
+              Ver Planos
             </Button>
-            <Button variant="secondary" className="min-w-[220px] px-6 py-3">
+            <Button variant="secondary" className="min-w-[220px] px-6 py-3" icon={<img src="/wahtsapp-icon.svg" className="h-[18px] w-[18px]" />}>
               Fale Conosco
             </Button>
           </div>

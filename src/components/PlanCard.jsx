@@ -4,7 +4,7 @@ import { Check } from "lucide-react";
 const PlanCard = ({ title, price, benefits, isSelected = false }) => {
   return (
     <div
-      className={`relative flex flex-col justify-between overflow-hidden rounded-[50px] px-8 py-16 transition-all duration-500 ${
+      className={`relative flex flex-col justify-between overflow-hidden rounded-[50px] px-8 pt-16 transition-all duration-500 ${
         isSelected
           ? "z-10 h-[598px] w-[453px] scale-100"
           : "z-0 h-[500px] w-[380px] scale-95 opacity-80"
@@ -61,6 +61,7 @@ const PlanCard = ({ title, price, benefits, isSelected = false }) => {
         <Button
           variant="primary"
           className={`${isSelected ? "px-6 py-3 text-base" : "px-4 py-[10px] text-sm"}`}
+          icon={<img src="/wahtsapp-icon.svg" className="h-[18px] w-[18px]" />}
         >
           Adquirir Plano
         </Button>
