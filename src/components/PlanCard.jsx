@@ -1,14 +1,26 @@
+// PlanCard.jsx
 import Button from "./Button";
 import { Check } from "lucide-react";
 
-const PlanCard = ({ title, price, benefits, isSelected = false }) => {
+const PlanCard = ({
+  title,
+  price,
+  benefits,
+  isSelected = false,
+  screenSize = "mobile",
+}) => {
   return (
     <div
-      className={`relative flex flex-col justify-between overflow-hidden rounded-[50px] px-8 pt-16 transition-all duration-500 ${
-        isSelected
-          ? "z-10 h-[598px] w-[453px] scale-100"
-          : "z-0 h-[500px] w-[380px] scale-95 opacity-80"
-      }`}
+  className={`relative flex flex-col justify-between overflow-hidden rounded-2xl px-3 pb-2 pt-6 transition-all duration-500 md:rounded-3xl md:px-12 md:pb-6 md:pt-12 lg:rounded-[30px] lg:px-4 lg:pb-4 lg:pt-6 xl:rounded-[50px] xl:px-6 xl:pb-6 xl:pt-10 ${
+    isSelected
+      ? screenSize === "desktop"
+        ? "z-10 h-[380px] w-full scale-100 lg:h-[420px] lg:w-[280px] xl:h-[500px] xl:w-[340px]"
+        : "z-10 h-[450px] w-full scale-100 md:h-[540px]"
+      : screenSize === "desktop"
+        ? "z-0 h-[330px] w-full scale-95 opacity-80 lg:h-[370px] lg:w-[230px] xl:h-[460px] xl:w-[290px]"
+        : "z-0 h-[400px] w-full scale-95 opacity-80 md:h-[550px]"
+  }`}
+
       style={{
         background: "black",
         position: "relative",
@@ -37,12 +49,38 @@ const PlanCard = ({ title, price, benefits, isSelected = false }) => {
       />
 
       {/* Content */}
-      <div className={`relative z-10 flex h-full flex-col ${isSelected ? "gap-12" : "gap-5"}`}>
-        <div className={`flex flex-col text-center ${isSelected ? "gap-12" : "gap-5"}`}>
+      <div
+        className={`relative z-10 flex h-full flex-col ${
+          screenSize === "desktop"
+            ? isSelected
+              ? "gap-4 lg:gap-5 xl:gap-8"
+              : "gap-3 lg:gap-4"
+            : isSelected
+              ? "gap-6 md:gap-8"
+              : "gap-4 md:gap-5"
+        }`}
+      >
+        <div
+          className={`flex flex-col text-center ${
+            screenSize === "desktop"
+              ? isSelected
+                ? "gap-4 lg:gap-5 xl:gap-8"
+                : "gap-3 lg:gap-4"
+              : isSelected
+                ? "gap-6 md:gap-8"
+                : "gap-4 md:gap-5"
+          }`}
+        >
           {/* Title */}
           <h3
             className={`font-bold ${
-              isSelected ? "text-2xl text-white" : "text-xl text-white/70"
+              isSelected
+                ? screenSize === "desktop"
+                  ? "text-base text-white lg:text-lg xl:text-xl"
+                  : "text-lg text-white md:text-xl"
+                : screenSize === "desktop"
+                  ? "text-sm text-white/70 lg:text-base"
+                  : "text-base text-white/70 md:text-lg"
             }`}
           >
             {title}
@@ -50,7 +88,13 @@ const PlanCard = ({ title, price, benefits, isSelected = false }) => {
           {/* Price */}
           <div
             className={`font-extrabold ${
-              isSelected ? "text-4xl text-primary" : "text-3xl text-primary/70"
+              isSelected
+                ? screenSize === "desktop"
+                  ? "text-xl text-primary lg:text-2xl xl:text-3xl"
+                  : "text-2xl text-primary md:text-3xl"
+                : screenSize === "desktop"
+                  ? "text-lg text-primary/70 lg:text-xl xl:text-2xl"
+                  : "text-xl text-primary/70 md:text-2xl"
             }`}
           >
             {price}
@@ -60,34 +104,79 @@ const PlanCard = ({ title, price, benefits, isSelected = false }) => {
         {/* Button */}
         <Button
           variant="primary"
-          className={`${isSelected ? "px-6 py-3 text-base" : "px-4 py-[10px] text-sm"}`}
-          icon={<img src="/wahtsapp-icon.svg" className="h-[18px] w-[18px]" />}
+          className={`${
+            isSelected
+              ? screenSize === "desktop"
+                ? "px-3 py-1 text-xs lg:px-4 lg:py-2 lg:text-sm xl:px-6 xl:py-3 xl:text-base"
+                : "px-4 py-2 text-sm md:px-6 md:py-3 md:text-base"
+              : screenSize === "desktop"
+                ? "px-2 py-1 text-xs lg:px-3 lg:py-2"
+                : "px-3 py-2 text-xs md:text-sm"
+          }`}
+          icon={
+            <img
+              src="/wahtsapp-icon.svg"
+              className={` ${
+                screenSize === "desktop"
+                  ? isSelected
+                    ? "h-3 w-3 lg:h-4 lg:w-4 xl:h-5 xl:w-5"
+                    : "h-3 w-3 lg:h-4 lg:w-4"
+                  : isSelected
+                    ? "h-4 w-4 md:h-5 md:w-5"
+                    : "h-3 w-3 md:h-4 md:w-4"
+              } `}
+            />
+          }
         >
           Adquirir Plano
         </Button>
 
         {/* Benefits */}
-        <div className="mt-6 flex flex-col gap-4">
+        <div
+          className={`mt-2 flex flex-col md:mt-4 lg:mt-2 xl:mt-4 ${
+            screenSize === "desktop" ? "gap-2 lg:gap-3" : "gap-3 md:gap-4"
+          }`}
+        >
           <h4
-            className={`text-lg font-bold ${
-              isSelected ? "text-white" : "text-white/70"
+            className={`${
+              isSelected
+                ? screenSize === "desktop"
+                  ? "text-sm font-bold text-white lg:text-base xl:text-lg"
+                  : "text-base font-bold text-white md:text-lg"
+                : screenSize === "desktop"
+                  ? "text-xs font-bold text-white/70 lg:text-sm"
+                  : "text-sm font-bold text-white/70 md:text-base"
             }`}
           >
             Benefícios:
           </h4>
-          <ul className="flex flex-col gap-2">
+          <ul
+            className={`flex flex-col ${
+              screenSize === "desktop" ? "gap-1 lg:gap-2" : "gap-1 md:gap-2"
+            }`}
+          >
             {benefits.map((benefit, index) => (
-              <li key={index} className="flex items-center gap-2">
+              <li key={index} className="flex items-center gap-1 md:gap-2">
                 <Check
-                  className={`h-5 w-5 ${
-                    isSelected ? "text-primary" : "text-primary/70"
+                  className={`${
+                    isSelected
+                      ? screenSize === "desktop"
+                        ? "h-3 w-3 text-primary lg:h-4 lg:w-4"
+                        : "h-4 w-4 text-primary md:h-5 md:w-5"
+                      : screenSize === "desktop"
+                        ? "h-3 w-3 text-primary/70 lg:h-4 lg:w-4"
+                        : "h-3 w-3 text-primary/70 md:h-4 md:w-4"
                   }`}
                 />
                 <span
                   className={`${
                     isSelected
-                      ? "text-sm text-white/90"
-                      : "text-[12px] text-white/70"
+                      ? screenSize === "desktop"
+                        ? "text-[10px] text-white/90 lg:text-xs"
+                        : "text-xs text-white/90 md:text-sm"
+                      : screenSize === "desktop"
+                        ? "text-[8px] text-white/70 lg:text-[10px]"
+                        : "text-[10px] text-white/70 md:text-xs"
                   }`}
                 >
                   {benefit}
