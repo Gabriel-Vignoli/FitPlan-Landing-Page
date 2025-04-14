@@ -42,7 +42,7 @@ const FAQList = () => {
   };
   
   return (
-    <div className="flex flex-col gap-6">
+    <div className="flex flex-col gap-3 sm:gap-4 md:gap-5 lg:gap-6">
       {faqItems.map((item, index) => (
         <FAQCard 
           key={index}
