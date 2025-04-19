@@ -13,7 +13,7 @@ const AboutSection = () => {
         </div>
 
         {/* Title */}
-        <h1 className="font-changa text-2xl sm:text-3xl md:text-4xl lg:text-5xl uppercase text-white whitespace-nowrap">
+        <h1 className="font-changa text-2xl sm:text-3xl md:text-4xl lg:text-heading uppercase text-white whitespace-nowrap">
           Sua Evolução <br className="hidden sm:block" />
           Começa Aqui
         </h1>

@@ -17,7 +17,7 @@ const PlansSection = () => {
           </div>
 
           {/* Title */}
-          <h1 className="text-center font-changa text-2xl uppercase text-white sm:text-3xl md:text-4xl">
+          <h1 className="text-center font-changa text-2xl uppercase text-white sm:text-3xl md:text-4xl lg:text-heading">
             ESCOLHA O PLANO IDEAL
           </h1>
 
