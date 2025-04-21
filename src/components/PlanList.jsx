@@ -1,7 +1,6 @@
-// PlanList.jsx
-import { ChevronLeft, ChevronRight } from "lucide-react";
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import PlanCard from "./PlanCard";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 
 const PlanList = () => {
   const plans = [
@@ -40,6 +39,35 @@ const PlanList = () => {
   ];
 
   const [selectedIndex, setSelectedIndex] = useState(1);
+  const [startX, setStartX] = useState(null);
+  const [isDragging, setIsDragging] = useState(false);
+  const carouselRef = useRef(null);
+
+  // Configuração do touch para mobile
+  const handleTouchStart = (e) => {
+    setStartX(e.touches[0].clientX);
+    setIsDragging(true);
+  };
+
+  const handleTouchMove = (e) => {
+    if (!isDragging) return;
+    const x = e.touches[0].clientX;
+    const diff = startX - x;
+    
+    if (diff > 50) {
+      // Swipe para a esquerda (próximo)
+      handleNext();
+      setIsDragging(false);
+    } else if (diff < -50) {
+      // Swipe para a direita (anterior)
+      handlePrevious();
+      setIsDragging(false);
+    }
+  };
+
+  const handleTouchEnd = () => {
+    setIsDragging(false);
+  };
 
   const handlePrevious = () => {
     setSelectedIndex((prev) => (prev === 0 ? plans.length - 1 : prev - 1));
@@ -49,37 +77,38 @@ const PlanList = () => {
     setSelectedIndex((prev) => (prev === plans.length - 1 ? 0 : prev + 1));
   };
 
+  // Auto-rotate para desktop (opcional)
+  useEffect(() => {
+    if (window.innerWidth >= 1024) { // lg breakpoint
+      const interval = setInterval(() => {
+        handleNext();
+      }, 5000);
+      return () => clearInterval(interval);
+    }
+  }, [selectedIndex]);
+
   return (
     <section className="flex flex-col items-center justify-center overflow-hidden p-4 md:p-6 lg:p-4 xl:p-8">
-      {/* Carrossel (visível em dispositivos menores) */}
-      <div className="relative flex w-full items-center justify-center gap-2 md:gap-4 lg:hidden">
-        <button
-          onClick={handlePrevious}
-          aria-label="Plano anterior"
-          className="z-10 rounded-full border-2 border-primary p-2 text-primary transition-all duration-300 hover:bg-primary hover:text-black md:p-3"
-        >
-          <ChevronLeft size={24} />
-        </button>
+     {/* Carrossel mobile com swipe */}
+<div 
+  className="relative w-full lg:hidden"
+  onTouchStart={handleTouchStart}
+  onTouchMove={handleTouchMove}
+  onTouchEnd={handleTouchEnd}
+  ref={carouselRef}
+>
+  <div className="flex w-full justify-center px-4"> 
+    <PlanCard
+      title={plans[selectedIndex].title}
+      price={plans[selectedIndex].price}
+      benefits={plans[selectedIndex].benefits}
+      isSelected={true}
+      screenSize="mobile"
+    />
+  </div>
+</div>
 
-        <div className="w-full max-w-sm">
-          <PlanCard
-            title={plans[selectedIndex].title}
-            price={plans[selectedIndex].price}
-            benefits={plans[selectedIndex].benefits}
-            isSelected={true}
-          />
-        </div>
-
-        <button
-          onClick={handleNext}
-          aria-label="Próximo plano"
-          className="z-10 rounded-full border-2 border-primary p-2 text-primary transition-all duration-300 hover:bg-primary hover:text-black md:p-3"
-        >
-          <ChevronRight size={24} />
-        </button>
-      </div>
-
-      {/* Layout com todos os cards (visível apenas no desktop) */}
+      {/* Layout desktop com navegação */}
       <div className="relative hidden w-full max-w-full items-center justify-center px-2 lg:flex">
         <button
           onClick={handlePrevious}
@@ -111,7 +140,7 @@ const PlanList = () => {
         </button>
       </div>
 
-      {/* Dots para navegação */}
+      {/* Indicadores de navegação */}
       <div className="mt-4 flex gap-2 md:mt-5">
         {plans.map((_, index) => (
           <button

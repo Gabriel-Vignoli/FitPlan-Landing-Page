@@ -1,4 +1,3 @@
-// PlanCard.jsx
 import Button from "./Button";
 import { Check } from "lucide-react";
 
@@ -15,21 +14,21 @@ const PlanCard = ({
     isSelected
       ? screenSize === "desktop"
         ? "z-10 h-[380px] w-full scale-100 lg:h-[420px] lg:w-[280px] xl:h-[500px] xl:w-[340px]"
-        : "z-10 h-[450px] w-full scale-100 md:h-[540px]"
+        : "z-10 h-[450px] w-full max-w-[600px] mx-auto scale-100 md:h-[540px]"
       : screenSize === "desktop"
         ? "z-0 h-[330px] w-full scale-95 opacity-80 lg:h-[370px] lg:w-[230px] xl:h-[460px] xl:w-[290px]"
-        : "z-0 h-[400px] w-full scale-95 opacity-80 md:h-[550px]"
+        : "z-0 h-[400px] w-full max-w-[600px] mx-auto scale-95 opacity-80 md:h-[550px]"
   }`}
+  style={{
+    background: "black",
+    position: "relative",
+    isolation: "isolate",
+    boxShadow: isSelected
+      ? "0 12px 24px rgba(245, 189, 4, 0.2), 0 4px 10px rgba(0, 0, 0, 0.2)"
+      : "0 8px 16px rgba(255, 255, 255, 0.08), 0 2px 6px rgba(0, 0, 0, 0.15)",
+  }}
+>
 
-      style={{
-        background: "black",
-        position: "relative",
-        isolation: "isolate",
-        boxShadow: isSelected
-          ? "0 12px 24px rgba(245, 189, 4, 0.2), 0 4px 10px rgba(0, 0, 0, 0.2)"
-          : "0 8px 16px rgba(255, 255, 255, 0.08), 0 2px 6px rgba(0, 0, 0, 0.15)",
-      }}
-    >
       {/* Gradient Effects */}
       <div
         className="absolute inset-0 z-0"
@@ -56,8 +55,8 @@ const PlanCard = ({
               ? "gap-4 lg:gap-5 xl:gap-8"
               : "gap-3 lg:gap-4"
             : isSelected
-              ? "gap-6 md:gap-8"
-              : "gap-4 md:gap-5"
+              ? "gap-4 md:gap-8" 
+              : "gap-3 md:gap-5" 
         }`}
       >
         <div
@@ -67,8 +66,8 @@ const PlanCard = ({
                 ? "gap-4 lg:gap-5 xl:gap-8"
                 : "gap-3 lg:gap-4"
               : isSelected
-                ? "gap-6 md:gap-8"
-                : "gap-4 md:gap-5"
+                ? "gap-4 md:gap-8" 
+                : "gap-3 md:gap-5" 
           }`}
         >
           {/* Title */}
@@ -77,10 +76,10 @@ const PlanCard = ({
               isSelected
                 ? screenSize === "desktop"
                   ? "text-base text-white lg:text-lg xl:text-xl"
-                  : "text-lg text-white md:text-xl"
+                  : "text-base text-white md:text-xl" 
                 : screenSize === "desktop"
                   ? "text-sm text-white/70 lg:text-base"
-                  : "text-base text-white/70 md:text-lg"
+                  : "text-sm text-white/70 md:text-lg" 
             }`}
           >
             {title}
@@ -91,27 +90,27 @@ const PlanCard = ({
               isSelected
                 ? screenSize === "desktop"
                   ? "text-xl text-primary lg:text-2xl xl:text-3xl"
-                  : "text-2xl text-primary md:text-3xl"
+                  : "text-lg text-primary md:text-3xl"
                 : screenSize === "desktop"
                   ? "text-lg text-primary/70 lg:text-xl xl:text-2xl"
-                  : "text-xl text-primary/70 md:text-2xl"
+                  : "text-base text-primary/70 md:text-2xl" 
             }`}
           >
             {price}
           </div>
         </div>
 
-        {/* Button */}
+        {/* Button  */}
         <Button
           variant="primary"
           className={`${
             isSelected
               ? screenSize === "desktop"
                 ? "px-3 py-1 text-xs lg:px-4 lg:py-2 lg:text-sm xl:px-6 xl:py-3 xl:text-base"
-                : "px-4 py-2 text-sm md:px-6 md:py-3 md:text-base"
+                : "px-3 py-1 text-xs md:px-6 md:py-3 md:text-base" 
               : screenSize === "desktop"
                 ? "px-2 py-1 text-xs lg:px-3 lg:py-2"
-                : "px-3 py-2 text-xs md:text-sm"
+                : "px-2 py-1 text-xs md:text-sm" 
           }`}
           icon={
             <img
@@ -122,8 +121,8 @@ const PlanCard = ({
                     ? "h-3 w-3 lg:h-4 lg:w-4 xl:h-5 xl:w-5"
                     : "h-3 w-3 lg:h-4 lg:w-4"
                   : isSelected
-                    ? "h-4 w-4 md:h-5 md:w-5"
-                    : "h-3 w-3 md:h-4 md:w-4"
+                    ? "h-3 w-3 md:h-5 md:w-5" 
+                    : "h-2 w-2 md:h-4 md:w-4" 
               } `}
             />
           }
@@ -134,7 +133,7 @@ const PlanCard = ({
         {/* Benefits */}
         <div
           className={`mt-2 flex flex-col md:mt-4 lg:mt-2 xl:mt-4 ${
-            screenSize === "desktop" ? "gap-2 lg:gap-3" : "gap-3 md:gap-4"
+            screenSize === "desktop" ? "gap-2 lg:gap-3" : "gap-2 md:gap-4" 
           }`}
         >
           <h4
@@ -142,10 +141,10 @@ const PlanCard = ({
               isSelected
                 ? screenSize === "desktop"
                   ? "text-sm font-bold text-white lg:text-base xl:text-lg"
-                  : "text-base font-bold text-white md:text-lg"
+                  : "text-sm font-bold text-white md:text-lg" 
                 : screenSize === "desktop"
                   ? "text-xs font-bold text-white/70 lg:text-sm"
-                  : "text-sm font-bold text-white/70 md:text-base"
+                  : "text-xs font-bold text-white/70 md:text-base" 
             }`}
           >
             Benefícios:
@@ -162,10 +161,10 @@ const PlanCard = ({
                     isSelected
                       ? screenSize === "desktop"
                         ? "h-3 w-3 text-primary lg:h-4 lg:w-4"
-                        : "h-4 w-4 text-primary md:h-5 md:w-5"
+                        : "h-3 w-3 text-primary md:h-5 md:w-5" 
                       : screenSize === "desktop"
                         ? "h-3 w-3 text-primary/70 lg:h-4 lg:w-4"
-                        : "h-3 w-3 text-primary/70 md:h-4 md:w-4"
+                        : "h-2 w-2 text-primary/70 md:h-4 md:w-4" 
                   }`}
                 />
                 <span
@@ -173,10 +172,10 @@ const PlanCard = ({
                     isSelected
                       ? screenSize === "desktop"
                         ? "text-[10px] text-white/90 lg:text-xs"
-                        : "text-xs text-white/90 md:text-sm"
+                        : "text-[10px] text-white/90 md:text-sm" 
                       : screenSize === "desktop"
                         ? "text-[8px] text-white/70 lg:text-[10px]"
-                        : "text-[10px] text-white/70 md:text-xs"
+                        : "text-[8px] text-white/70 md:text-xs"
                   }`}
                 >
                   {benefit}
