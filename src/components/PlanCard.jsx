@@ -14,7 +14,7 @@ const PlanCard = ({
     isSelected
       ? screenSize === "desktop"
         ? "z-10 h-[380px] w-full scale-100 lg:h-[420px] lg:w-[280px] xl:h-[500px] xl:w-[340px]"
-        : "z-10 h-[450px] w-full max-w-[600px] mx-auto scale-100 md:h-[540px]"
+        : "z-10 h-[380px] w-full max-w-[700px] mx-auto scale-100 md:h-[540px]"
       : screenSize === "desktop"
         ? "z-0 h-[330px] w-full scale-95 opacity-80 lg:h-[370px] lg:w-[230px] xl:h-[460px] xl:w-[290px]"
         : "z-0 h-[400px] w-full max-w-[600px] mx-auto scale-95 opacity-80 md:h-[550px]"
