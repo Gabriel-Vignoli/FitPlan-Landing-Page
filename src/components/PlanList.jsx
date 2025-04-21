@@ -1,6 +1,6 @@
-import { useState, useRef, useEffect } from "react";
-import PlanCard from "./PlanCard";
+import { useState } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
+import PlanCard from "./PlanCard";
 
 const PlanList = () => {
   const plans = [
@@ -38,36 +38,7 @@ const PlanList = () => {
     },
   ];
 
-  const [selectedIndex, setSelectedIndex] = useState(1);
-  const [startX, setStartX] = useState(null);
-  const [isDragging, setIsDragging] = useState(false);
-  const carouselRef = useRef(null);
-
-  // Configuração do touch para mobile
-  const handleTouchStart = (e) => {
-    setStartX(e.touches[0].clientX);
-    setIsDragging(true);
-  };
-
-  const handleTouchMove = (e) => {
-    if (!isDragging) return;
-    const x = e.touches[0].clientX;
-    const diff = startX - x;
-    
-    if (diff > 50) {
-      // Swipe para a esquerda (próximo)
-      handleNext();
-      setIsDragging(false);
-    } else if (diff < -50) {
-      // Swipe para a direita (anterior)
-      handlePrevious();
-      setIsDragging(false);
-    }
-  };
-
-  const handleTouchEnd = () => {
-    setIsDragging(false);
-  };
+  const [selectedIndex, setSelectedIndex] = useState(0);
 
   const handlePrevious = () => {
     setSelectedIndex((prev) => (prev === 0 ? plans.length - 1 : prev - 1));
@@ -77,48 +48,48 @@ const PlanList = () => {
     setSelectedIndex((prev) => (prev === plans.length - 1 ? 0 : prev + 1));
   };
 
-  // Auto-rotate para desktop (opcional)
-  useEffect(() => {
-    if (window.innerWidth >= 1024) { // lg breakpoint
-      const interval = setInterval(() => {
-        handleNext();
-      }, 5000);
-      return () => clearInterval(interval);
-    }
-  }, [selectedIndex]);
-
   return (
-    <section className="flex flex-col items-center justify-center overflow-hidden p-4 md:p-6 lg:p-4 xl:p-8">
-     {/* Carrossel mobile com swipe */}
-<div 
-  className="relative w-full lg:hidden"
-  onTouchStart={handleTouchStart}
-  onTouchMove={handleTouchMove}
-  onTouchEnd={handleTouchEnd}
-  ref={carouselRef}
->
-  <div className="flex w-full justify-center px-4"> 
-    <PlanCard
-      title={plans[selectedIndex].title}
-      price={plans[selectedIndex].price}
-      benefits={plans[selectedIndex].benefits}
-      isSelected={true}
-      screenSize="mobile"
-    />
-  </div>
-</div>
-
-      {/* Layout desktop com navegação */}
-      <div className="relative hidden w-full max-w-full items-center justify-center px-2 lg:flex">
+    <section className="flex flex-col items-center justify-center bg-transparent p-4 md:p-6 lg:p-4 xl:p-8">
+      {/* Mobile Version with Smaller Buttons */}
+      <div className="relative flex w-full items-center justify-center gap-1 lg:hidden">
         <button
           onClick={handlePrevious}
           aria-label="Plano anterior"
-          className="z-10 mr-1 flex-shrink-0 rounded-full border-2 border-primary p-1 text-primary transition-all duration-300 hover:bg-primary hover:text-black lg:mr-2 lg:p-2 xl:mr-4 xl:p-3"
+          className="z-10 flex h-8 w-8 items-center justify-center rounded-full border border-primary bg-black p-1 text-primary transition-all duration-300 hover:bg-primary hover:text-black"
         >
-          <ChevronLeft size={20} className="lg:h-5 lg:w-5 xl:h-6 xl:w-6" />
+          <ChevronLeft size={16} />
         </button>
 
-        <div className="flex flex-grow items-center justify-center gap-1 overflow-visible lg:gap-2 xl:gap-4">
+        <div className="w-full max-w-md">
+          <PlanCard
+            title={plans[selectedIndex].title}
+            price={plans[selectedIndex].price}
+            benefits={plans[selectedIndex].benefits}
+            isSelected={true}
+            screenSize="mobile"
+          />
+        </div>
+
+        <button
+          onClick={handleNext}
+          aria-label="Próximo plano"
+          className="z-10 flex h-8 w-8 items-center justify-center rounded-full border border-primary bg-black p-1 text-primary transition-all duration-300 hover:bg-primary hover:text-black"
+        >
+          <ChevronRight size={16} />
+        </button>
+      </div>
+
+      {/* Desktop Version */}
+      <div className="hidden w-full max-w-6xl items-center justify-center lg:flex">
+        <button
+          onClick={handlePrevious}
+          aria-label="Plano anterior"
+          className="z-10 mr-4 flex h-12 w-12 items-center justify-center rounded-full border-2 border-primary bg-black p-2 text-primary transition-all duration-300 hover:bg-primary hover:text-black"
+        >
+          <ChevronLeft size={24} />
+        </button>
+
+        <div className="flex flex-1 justify-center gap-4">
           {plans.map((plan, index) => (
             <PlanCard
               key={plan.title}
@@ -134,24 +105,22 @@ const PlanList = () => {
         <button
           onClick={handleNext}
           aria-label="Próximo plano"
-          className="z-10 ml-1 flex-shrink-0 rounded-full border-2 border-primary p-1 text-primary transition-all duration-300 hover:bg-primary hover:text-black lg:ml-2 lg:p-2 xl:ml-4 xl:p-3"
+          className="z-10 ml-4 flex h-12 w-12 items-center justify-center rounded-full border-2 border-primary bg-black p-2 text-primary transition-all duration-300 hover:bg-primary hover:text-black"
         >
-          <ChevronRight size={20} className="lg:h-5 lg:w-5 xl:h-6 xl:w-6" />
+          <ChevronRight size={24} />
         </button>
       </div>
 
-      {/* Indicadores de navegação */}
-      <div className="mt-4 flex gap-2 md:mt-5">
+      {/* Navigation Dots */}
+      <div className="mt-4 flex justify-center gap-2">
         {plans.map((_, index) => (
           <button
             key={index}
-            aria-label={`Selecionar ${plans[index].title}`}
             onClick={() => setSelectedIndex(index)}
-            className={`h-2 rounded-full transition-all md:h-3 ${
-              index === selectedIndex
-                ? "w-4 bg-yellow-500 md:w-5"
-                : "w-2 bg-white md:w-3"
+            className={`h-2 w-2 rounded-full transition-all ${
+              index === selectedIndex ? "bg-primary w-4" : "bg-gray-300"
             }`}
+            aria-label={`Ir para ${plans[index].title}`}
           />
         ))}
       </div>
