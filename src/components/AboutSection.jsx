@@ -49,7 +49,7 @@ const AboutSection = () => {
       {/* Right */}
       <div className="flex w-full md:w-1/2 h-64 sm:h-80 md:h-auto items-center justify-center">
         <img
-          src="/hero-section-img.png"
+          src="/bg-about.jpeg"
           alt="Sobre nós"
           className="h-full w-full object-cover"
         />
