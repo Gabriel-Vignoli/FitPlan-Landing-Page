@@ -5,35 +5,33 @@ import PlanCard from "./PlanCard";
 const PlanList = () => {
   const plans = [
     {
-      title: "Plano Básico",
-      price: "R$ 69,90/mês",
+      title: "Plano Intermidiário",
+      price: "R$ 80,00/mês",
       benefits: [
         "Treino 3x por semana",
-        "Acesso à área de musculação",
-        "Avaliação física inicial",
+        "Treino Individualizado",
+        "Avaliação Antropométrica",
+        "Adipometria",
       ],
     },
     {
-      title: "Plano Completo",
-      price: "R$ 99,90/mês",
+      title: "Plano Avançado",
+      price: "R$ 100,00/mês",
       benefits: [
         "Treino todos os dias da semana",
-        "Acompanhamento com personal",
-        "Acesso à área de musculação",
-        "Avaliação física trimestral",
-        "Acesso ao nosso sistema",
+        "Treino Individualizado",
+        "Avaliação Antropométrica",
+        "Adipometria",
       ],
     },
     {
-      title: "Plano Premium",
-      price: "R$ 149,90/mês",
+      title: "Funcional",
+      price: "R$ 120,00/mês",
       benefits: [
-        "Treino todos os dias da semana",
-        "Acompanhamento com personal exclusivo",
-        "Acesso a todas as modalidades",
-        "Avaliação física mensal",
-        "Acesso ao nosso sistema VIP",
-        "Nutricionista incluso",
+        "Treino funcional com professora",
+        "Acompanhamento com profissional",
+        "Avaliação Antropométrica",
+        "Adipometria",
       ],
     },
   ];
@@ -118,7 +116,7 @@ const PlanList = () => {
             key={index}
             onClick={() => setSelectedIndex(index)}
             className={`h-2 w-2 rounded-full transition-all ${
-              index === selectedIndex ? "bg-primary w-4" : "bg-gray-300"
+              index === selectedIndex ? "w-4 bg-primary" : "bg-gray-300"
             }`}
             aria-label={`Ir para ${plans[index].title}`}
           />

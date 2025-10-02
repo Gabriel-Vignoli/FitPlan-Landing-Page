@@ -114,15 +114,15 @@ const PlanCard = ({
           }`}
           icon={
             <img
-              src="/wahtsapp-icon.svg"
+              src="/whatsapp-black-icon.svg"
               className={` ${
                 screenSize === "desktop"
                   ? isSelected
-                    ? "h-3 w-3 lg:h-4 lg:w-4 xl:h-5 xl:w-5"
-                    : "h-3 w-3 lg:h-4 lg:w-4"
+                    ? "h-3 w-3 lg:h-4 lg:w-4 xl:h-5 xl:w-5 text-black"
+                    : "h-3 w-3 lg:h-4 lg:w-4 text-black"
                   : isSelected
-                    ? "h-3 w-3 md:h-5 md:w-5" 
-                    : "h-2 w-2 md:h-4 md:w-4" 
+                    ? "h-3 w-3 md:h-5 md:w-5 text-black" 
+                    : "h-2 w-2 md:h-4 md:w-4 text-black" 
               } `}
             />
           }
