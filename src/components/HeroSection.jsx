@@ -4,7 +4,7 @@ import { Sparkles, Info, ArrowRight } from "lucide-react";
 
 const HeroSection = () => {
   return (
-    <section className="relative flex h-screen w-full flex-col items-start justify-center bg-[linear-gradient(to_right,rgba(0,0,0,0.85),rgba(0,0,0,0.4),rgba(0,0,0,0)),linear-gradient(to_top,rgba(0,0,0,0.85),rgba(0,0,0,0.4),rgba(0,0,0,0)),url('/hero-section-img.png')] bg-cover bg-center bg-no-repeat px-8 pt-0 sm:h-[80vh] md:h-[90vh] md:px-16 md:pt-0">
+    <section className="relative flex h-screen w-full flex-col items-start justify-center bg-[linear-gradient(to_right,rgba(0,0,0,0.8),rgba(0,0,0,0.3),rgba(0,0,0,0)),linear-gradient(to_top,rgba(0,0,0,0.5),rgba(0,0,0,0.15),rgba(0,0,0,0)),url('/bg-hero.jpeg')] bg-cover bg-center bg-no-repeat px-8 pt-0 sm:h-[80vh] md:h-[90vh] md:px-16 md:pt-0">
       <div className="max-w-7[] flex w-full flex-col items-start gap-4 sm:gap-5 md:gap-7">
         {/* Hat */}
         <div className="flex w-fit items-center gap-2 rounded-full border border-primary/20 bg-primary/10 px-3 py-2 backdrop-blur sm:px-4 sm:py-2">
