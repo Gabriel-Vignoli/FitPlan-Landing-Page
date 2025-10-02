@@ -12,14 +12,14 @@ const Button = ({
   const [isHovered, setIsHovered] = useState(false);
 
   const baseStyles =
-    "relative rounded-full border px-7 py-4 text-button font-jakarta font-bold text-white transition-all duration-300 ease-in-out overflow-hidden transform";
+    "relative rounded-full border px-7 py-4 text-button font-jakarta font-semibold transition-all duration-300 ease-in-out overflow-hidden transform shadow-md";
 
   const variantStyles = {
-    primary: `bg-primary border-white/10 shadow-button ${
-      isHovered ? "bg-yellow-500 scale-105 shadow-lg" : ""
+    primary: `bg-primary border-white/10 text-black ${
+      isHovered ? "bg-yellow-500 scale-105" : ""
     }`,
-    secondary: `bg-white/5 border-white/10 shadow-[0_4px_24px_rgba(255,225,219,0.2),inset_0_4px_12px_rgba(255,255,255,0.3)] backdrop-blur ${
-      isHovered ? "bg-white/15 scale-105 shadow-xl border-white/20" : ""
+    secondary: `bg-white/5 text-white border-white/10 shadow-[0_4px_24px_rgba(255,225,219,0.2),inset_0_4px_12px_rgba(255,255,255,0.3)] backdrop-blur ${
+      isHovered ? "bg-white/15 scale-105 border-white/20" : ""
     }`,
   };
 
@@ -50,7 +50,7 @@ const Button = ({
         {icon && (
           <span
             className={`transition-transform duration-300 ${
-              isHovered ? "scale-110" : ""
+              isHovered ? "scale-100" : ""
             }`}
           >
             {icon}
