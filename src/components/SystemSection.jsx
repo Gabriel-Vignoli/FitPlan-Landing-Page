@@ -9,11 +9,11 @@ const SystemSection = () => {
         Nosso Sistema
       </h1>
 
-      <div className="w-full rounded-2xl border-2 border-white/10 shadow-[0_4px_24px_rgba(255,255,255,0.2),inset_0_4px_12px_rgba(255,255,255,0.3)]">
-        <div className="relative aspect-[16/9] w-full overflow-hidden rounded-2xl sm:aspect-[16/8] md:aspect-[16/7]">
+      <div className="w-full rounded-[8px] border-2 border-white/10 shadow-[0_8px_30px_rgba(255,255,255,0.06)]">
+        <div className="relative aspect-[16/9] w-full overflow-hidden rounded-[8px] shadow-[0_4px_20px_rgba(255,255,255,0.08)] sm:aspect-[16/8] md:aspect-[16/7]">
           <img
-            src="/assets/system.png"
-            alt="Sistema Vortex Fit"
+            src="/sistema.png"
+            alt="Sistema Montanini Academy"
             className="h-full w-full object-cover"
           />
         </div>
