@@ -1,5 +1,6 @@
 import AboutSection from "./components/AboutSection";
 import FAQSection from "./components/FAQSection";
+import Footer from "./components/Footer";
 import Header from "./components/Header";
 import HeroSection from "./components/HeroSection";
 import MethodologySection from "./components/MethodologySection";
@@ -18,6 +19,7 @@ function App() {
      <SystemSection></SystemSection>
      <PlansSection></PlansSection>
      <FAQSection></FAQSection>
+     <Footer></Footer>
     </>
   );
 }
