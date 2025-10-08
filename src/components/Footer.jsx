@@ -15,7 +15,7 @@ export default function Footer() {
               <div className="flex items-start gap-2">
                 <MapPin className="mt-1 h-4 w-4 flex-shrink-0 text-primary" />
                 <p>
-                  Rua Exemplo, 123
+                  Coronel Fabiano, 133, Centro
                   <br />
                   Arceburgo, Minas Gerais
                 </p>
@@ -30,19 +30,19 @@ export default function Footer() {
               <div className="flex items-center gap-2">
                 <Phone className="h-4 w-4 flex-shrink-0 text-primary" />
                 <a
-                  href="tel:+5519999999999"
+                  href="tel:+5535999138692"
                   className="break-all transition hover:text-primary"
                 >
-                  (19) 99999-9999
+                  (35) 99913-8692
                 </a>
               </div>
               <div className="flex items-center gap-2">
                 <Mail className="h-4 w-4 flex-shrink-0 text-primary" />
                 <a
-                  href="mailto:contato@montaniniacademy.com"
+                  href="mailto:montanini911@gmail.com"
                   className="break-all transition hover:text-primary"
                 >
-                  contato@montaniniacademy.com
+                  montanini911@gmail.com
                 </a>
               </div>
             </div>
