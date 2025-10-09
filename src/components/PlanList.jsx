@@ -5,7 +5,7 @@ import PlanCard from "./PlanCard";
 const PlanList = () => {
   const plans = [
     {
-      title: "Plano Intermidiário",
+      title: "Plano Intermediário",
       price: "R$ 80,00/mês",
       benefits: [
         "Treino 3x por semana",

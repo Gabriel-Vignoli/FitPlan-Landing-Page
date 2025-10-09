@@ -23,7 +23,7 @@ const AboutSection = () => {
           Somos um espaço para quem busca transformação, superação e resultados
           reais. Com treinos eficazes, estrutura de ponta e suporte
           profissional, ajudamos você a atingir seus objetivos, seja qual for o
-          seu nível. Na Vortex Fit, cada treino é um passo rumo à sua melhor
+          seu nível. Na Montanini Academy, cada treino é um passo rumo à sua melhor
           versão!
         </p>
 
